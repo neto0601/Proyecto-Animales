@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
 
 public class Conexion {
  
-     private String url = "jdbc:mysql://localhost:3306/baseDeDatos";
+     private String url = "jdbc:mysql://localhost:3306/basemascotas";
     private String login = "root"; //Administrador de MySQL
-    private String password = "12345";
+    private String password = "";
     private Connection cnx = null;
     private Statement sttm = null;
     private ResultSet rst = null;
