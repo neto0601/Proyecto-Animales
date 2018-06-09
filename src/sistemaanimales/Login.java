@@ -23,6 +23,8 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jtfUsuario = new javax.swing.JTextField();
         jPassword = new javax.swing.JPasswordField();
+        btnAceptar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         ImagenFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,6 +115,14 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jPassword);
         jPassword.setBounds(260, 360, 260, 40);
 
+        btnAceptar.setText("Aceptar");
+        getContentPane().add(btnAceptar);
+        btnAceptar.setBounds(570, 490, 130, 80);
+
+        btnSalir.setText("Salir");
+        getContentPane().add(btnSalir);
+        btnSalir.setBounds(420, 490, 130, 80);
+
         ImagenFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/dog-photography-wallpaper-1713.jpg"))); // NOI18N
         ImagenFondo.setMaximumSize(new java.awt.Dimension(1000, 1000));
         ImagenFondo.setMinimumSize(new java.awt.Dimension(1000, 1000));
@@ -159,6 +169,8 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ImagenFondo;
     private javax.swing.JLabel Título;
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

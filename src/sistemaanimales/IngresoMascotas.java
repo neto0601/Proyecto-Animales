@@ -1,6 +1,8 @@
 
 package sistemaanimales;
 
+import javax.swing.JOptionPane;
+
 
 public class IngresoMascotas extends javax.swing.JFrame {
 
@@ -8,6 +10,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
     public IngresoMascotas() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Ingrese los datos de su Mascota");
     }
 
     
@@ -25,13 +28,15 @@ public class IngresoMascotas extends javax.swing.JFrame {
         jtfEspecie = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jtfEspecie1 = new javax.swing.JTextField();
+        jtfRaza = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         rbtnMacho = new javax.swing.JRadioButton();
-        rbtnMacho1 = new javax.swing.JRadioButton();
-        btnAceptar = new javax.swing.JButton();
+        rbtnHembra = new javax.swing.JRadioButton();
+        btnRegistrar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,8 +135,8 @@ public class IngresoMascotas extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(40, 280, 130, 40);
-        getContentPane().add(jtfEspecie1);
-        jtfEspecie1.setBounds(230, 280, 420, 40);
+        getContentPane().add(jtfRaza);
+        jtfRaza.setBounds(230, 280, 420, 40);
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -164,20 +169,33 @@ public class IngresoMascotas extends javax.swing.JFrame {
         getContentPane().add(rbtnMacho);
         rbtnMacho.setBounds(280, 460, 130, 35);
 
-        rbtnMacho1.setBackground(new java.awt.Color(0, 0, 0));
-        rbtnMacho1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        rbtnMacho1.setForeground(new java.awt.Color(255, 255, 255));
-        rbtnMacho1.setText("Hembra");
-        getContentPane().add(rbtnMacho1);
-        rbtnMacho1.setBounds(570, 460, 130, 35);
+        rbtnHembra.setBackground(new java.awt.Color(0, 0, 0));
+        rbtnHembra.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        rbtnHembra.setForeground(new java.awt.Color(255, 255, 255));
+        rbtnHembra.setText("Hembra");
+        getContentPane().add(rbtnHembra);
+        rbtnHembra.setBounds(570, 460, 130, 35);
 
-        btnAceptar.setText("Aceptar");
-        getContentPane().add(btnAceptar);
-        btnAceptar.setBounds(760, 620, 140, 90);
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegistrar);
+        btnRegistrar.setBounds(760, 620, 140, 90);
 
         btnSalir.setText("Salir");
         getContentPane().add(btnSalir);
-        btnSalir.setBounds(570, 620, 140, 90);
+        btnSalir.setBounds(250, 620, 140, 90);
+
+        btnEliminar.setText("Eliminar");
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(590, 620, 140, 90);
+
+        btnBuscar.setText("Buscar");
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(420, 620, 140, 90);
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/la-vida-secreta-de-tus-mascotas-pelicula-fondos-de-pantalla-hd.jpg"))); // NOI18N
         getContentPane().add(Fondo);
@@ -185,6 +203,27 @@ public class IngresoMascotas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        
+        SqlMascotas mas = new SqlMascotas();
+        MetodosMascotas met = new MetodosMascotas();
+        
+        met.setNombre(jtfNombre.getText());
+        met.setEspecie(jtfEspecie.getText());
+        met.setRaza(jtfRaza.getText());
+        if(rbtnMacho.isSelected()){
+            met.setGenero("Macho");
+        }else if(rbtnHembra.isSelected()){
+            met.setGenero("Hembra");
+        }
+        if(mas.registrar(met)){
+            JOptionPane.showMessageDialog(null, "Los datos de su mascota se han guardado");
+        }else{
+            JOptionPane.showMessageDialog(null, "Error al guardar los datos");
+        }
+        
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,7 +262,9 @@ public class IngresoMascotas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -236,9 +277,9 @@ public class IngresoMascotas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jtfEspecie;
-    private javax.swing.JTextField jtfEspecie1;
     private javax.swing.JTextField jtfNombre;
+    private javax.swing.JTextField jtfRaza;
+    private javax.swing.JRadioButton rbtnHembra;
     private javax.swing.JRadioButton rbtnMacho;
-    private javax.swing.JRadioButton rbtnMacho1;
     // End of variables declaration//GEN-END:variables
 }
