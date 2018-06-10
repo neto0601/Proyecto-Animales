@@ -16,7 +16,7 @@ public class SqlMascotas extends conexion {
         PreparedStatement ps = null;
         Connection con = getConexion();
 
-        String sql = "INSERT INTO mascotas (nombre, especie, raza, genero, estado) VALUES (?,?,?,?, 'A')";
+        String sql = "INSERT INTO mascotas (nombre, especie, raza, genero) VALUES (?,?,?,?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, mta.getNombre().toLowerCase());
