@@ -9,6 +9,24 @@ public class MetodosMascotas {
     private String raza;
     private String genero;
     
+    public MetodosMascotas(){}
+    
+    public MetodosMascotas(int id_mascotas, String nombre, String especie, String raza, String genero){
+        this.id_mascota = id_mascotas;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.genero = genero;
+    }
+    
+    public MetodosMascotas(String nombre, String especie, String raza, String genero){
+        
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.genero = genero;
+    }
+    
 
     public int getId_mascota() {
         return id_mascota;
