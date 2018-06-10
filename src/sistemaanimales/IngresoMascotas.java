@@ -291,7 +291,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        
+        if(!jtfNombre.getText().isEmpty() || !jtfEspecie.getText().isEmpty() || !jtfRaza.getText().isEmpty()){
         SqlMascotas mas = new SqlMascotas();
         MetodosMascotas met = new MetodosMascotas();
         
@@ -310,7 +310,11 @@ public class IngresoMascotas extends javax.swing.JFrame {
         }
         Limpiar();
         Buttons();
-        
+        }else{
+    
+            JOptionPane.showMessageDialog(null, "No te ama");
+    
+                }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void rbtnMachoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMachoActionPerformed
