@@ -412,7 +412,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
            sm = new SqlMascotas();       
            sm.Eliminar(Integer.parseInt(jtfId.getText()));
        }else{
-           JOptionPane.showMessageDialog(null,"Debe de introducir el Id de la mascota para eliminar el registro");
+           JOptionPane.showMessageDialog(null,"Debe de introducir el id de la mascota para eliminar el registro");
        }
             
        
