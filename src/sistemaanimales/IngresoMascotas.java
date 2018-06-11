@@ -393,7 +393,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
         mm = new MetodosMascotas(Integer.parseInt(jtfId.getText()), jtfNombre.getText().toLowerCase(), jtfEspecie.getText().toLowerCase(), jtfRaza.getText().toLowerCase(), genero.toLowerCase());
         sm.updateMascota(mm);   
         }else{
-            JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos (Incluido el id)");
+            JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos de informacion (Incluido el id)");
         }
         
     }//GEN-LAST:event_btnModificarActionPerformed
