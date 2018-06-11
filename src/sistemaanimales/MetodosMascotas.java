@@ -27,6 +27,8 @@ public class MetodosMascotas {
         this.genero = genero;
     }
     
+    
+    
 
     public int getId_mascota() {
         return id_mascota;

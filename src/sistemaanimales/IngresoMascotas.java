@@ -25,6 +25,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
       jtfNombre.setText(null);
       jtfEspecie.setText(null);
       jtfRaza.setText(null);
+      jtfId.setText(null);
       if(rbtnMacho.isSelected()){
           rbtnMacho.setSelected(false);
       }else if(rbtnHembra.isSelected()){
@@ -63,13 +64,15 @@ public class IngresoMascotas extends javax.swing.JFrame {
         rbtnMacho = new javax.swing.JRadioButton();
         rbtnHembra = new javax.swing.JRadioButton();
         btnRegistrar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jtfId = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        Fondo = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(955, 787));
@@ -225,18 +228,23 @@ public class IngresoMascotas extends javax.swing.JFrame {
         getContentPane().add(btnRegistrar);
         btnRegistrar.setBounds(760, 620, 140, 90);
 
-        btnSalir.setText("Salir");
-        getContentPane().add(btnSalir);
-        btnSalir.setBounds(250, 620, 140, 90);
-
-        btnEliminar.setText("Modificar");
+        btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
         getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(590, 620, 140, 90);
+        btnEliminar.setBounds(250, 620, 140, 90);
+
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnModificar);
+        btnModificar.setBounds(590, 620, 140, 90);
 
         jtfId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,7 +252,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jtfId);
-        jtfId.setBounds(760, 90, 140, 20);
+        jtfId.setBounds(760, 140, 140, 22);
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -255,43 +263,54 @@ public class IngresoMascotas extends javax.swing.JFrame {
         getContentPane().add(btnBuscar);
         btnBuscar.setBounds(420, 620, 140, 90);
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/la-vida-secreta-de-tus-mascotas-pelicula-fondos-de-pantalla-hd.jpg"))); // NOI18N
-        getContentPane().add(Fondo);
-        Fondo.setBounds(0, 0, 940, 740);
+        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel6.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Id");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(660, 80, 100, 100);
+        jPanel6.setBounds(750, 90, 160, 40);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir);
+        btnSalir.setBounds(69, 620, 150, 90);
 
-        getContentPane().add(jPanel7);
-        jPanel7.setBounds(660, 60, 100, 100);
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpiar);
+        btnLimpiar.setBounds(760, 530, 130, 40);
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/la-vida-secreta-de-tus-mascotas-pelicula-fondos-de-pantalla-hd.jpg"))); // NOI18N
+        getContentPane().add(Fondo);
+        Fondo.setBounds(0, 0, 940, 740);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        if(!jtfNombre.getText().isEmpty() || !jtfEspecie.getText().isEmpty() || !jtfRaza.getText().isEmpty()){
+        if(!jtfNombre.getText().isEmpty() && !jtfEspecie.getText().isEmpty() && !jtfRaza.getText().isEmpty() && (rbtnMacho.isSelected() || rbtnHembra.isSelected())){
         SqlMascotas mas = new SqlMascotas();
         MetodosMascotas met = new MetodosMascotas();
         
@@ -312,7 +331,7 @@ public class IngresoMascotas extends javax.swing.JFrame {
         Buttons();
         }else{
     
-            JOptionPane.showMessageDialog(null, "No te ama");
+            JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos");
     
                 }
     }//GEN-LAST:event_btnRegistrarActionPerformed
@@ -334,29 +353,35 @@ public class IngresoMascotas extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtnHembraActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+      if(!jtfId.getText().isEmpty()){
         sm = new SqlMascotas();
         mm = sm.buscarMascota(Integer.parseInt(jtfId.getText()));
         jtfNombre.setText(mm.getNombre());
         jtfEspecie.setText(mm.getEspecie());
         jtfRaza.setText(mm.getRaza());
         String gen = mm.getGenero();
-        if(mm.getGenero().equals("Macho")){
+        if(mm.getGenero().equals("macho")){
         rbtnMacho.setSelected(true);
         rbtnHembra.setSelected(false);
         }
         
-        if(mm.getGenero().equals("Hembra")){
+        if(mm.getGenero().equals("hembra")){
         rbtnHembra.setSelected(true);
         rbtnMacho.setSelected(false);
-        }
+        }  
+      }else{
+          JOptionPane.showMessageDialog(null,"Debe de introducir el Id de la mascota que desea buscar");
+      } 
+        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfIdActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        sm = new SqlMascotas();
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        if(!jtfNombre.getText().isEmpty() && !jtfEspecie.getText().isEmpty() && !jtfId.getText().isEmpty() && !jtfRaza.getText().isEmpty() && (rbtnMacho.isSelected() || rbtnHembra.isSelected())){
+         sm = new SqlMascotas();
         
         String genero = " ";
         
@@ -366,7 +391,36 @@ public class IngresoMascotas extends javax.swing.JFrame {
             genero = "hembra";
         }
         mm = new MetodosMascotas(Integer.parseInt(jtfId.getText()), jtfNombre.getText().toLowerCase(), jtfEspecie.getText().toLowerCase(), jtfRaza.getText().toLowerCase(), genero.toLowerCase());
-        sm.updateMascota(mm);
+        sm.updateMascota(mm);   
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos (Incluido el id)");
+        }
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        Limpiar();
+        Buttons();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+       if(!jtfId.getText().isEmpty()){
+           sm = new SqlMascotas();       
+           sm.Eliminar(Integer.parseInt(jtfId.getText()));
+       }else{
+           JOptionPane.showMessageDialog(null,"Debe de introducir el Id de la mascota para eliminar el registro");
+       }
+            
+       
+         
+        
+        
+        
+            
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
@@ -408,6 +462,8 @@ public class IngresoMascotas extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
@@ -415,13 +471,13 @@ public class IngresoMascotas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JTextField jtfEspecie;
     private javax.swing.JTextField jtfId;
     private javax.swing.JTextField jtfNombre;
@@ -430,36 +486,6 @@ public class IngresoMascotas extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtnMacho;
     // End of variables declaration//GEN-END:variables
 
- /*conexion cone = new conexion();
-        Connection con;
-        PreparedStatement ps = null;
-        ResultSet rs;
-    try {
-            con = cone.getConexion();
-            ps = con.prepareStatement("SELECT * FROM mascotas WHERE Id_Mascota ="+Integer.parseInt(jtfId.getText()));
-            
-            
-            rs = ps.executeQuery();
-            
-            if(rs.next()){
-                jtfNombre.setText(rs.getString("Nombre"));
-                jtfEspecie.setText(rs.getString("Especie"));
-                jtfRaza.setText(rs.getString("Raza"));
-                
-                if(rs.getString("Genero").equals("Macho")){
-                    rbtnMacho.setSelected(true);
-                }
-                if(rs.getString("Genero").equals("Hembra")){
-                    rbtnHembra.setSelected(true);
-                }
-                
-            }else{
-                JOptionPane.showMessageDialog(null,"No existe una mascota con ese Id");
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(IngresoMascotas.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
 
 
 }

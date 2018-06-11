@@ -80,6 +80,23 @@ public class SqlMascotas extends conexion {
     
     }
     
+    public boolean Eliminar(int id){
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+            
+        try {
+            ps = con.prepareStatement("DELETE FROM mascotas WHERE id=?");
+            ps.setInt(1, id);
+            ps.execute();
+            return true;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(SqlMascotas.class.getName()).log(Level.SEVERE, null, ex);
+           return false; 
+        }
+        
+    }
+    
         
         
         
