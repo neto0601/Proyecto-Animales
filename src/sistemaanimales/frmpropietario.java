@@ -36,15 +36,41 @@ public class frmpropietario extends javax.swing.JFrame {
         txtNombre.setEnabled(false);
         rdbMasculino.setEnabled(false);
         rdbFemenino.setEnabled(false);
-        ftxtCelular.setEnabled(false);}
-
+        ftxtCelular.setEnabled(false);
+        btnnuevo.setVisible(false);
+        btnguardar.setVisible(false);
+        btncancelar.setVisible(false);
+        btnbuscar.setVisible(false);
+        btnmodificar.setVisible(false);
+        btnekiminar.setVisible(false);
+        btnguardarModificacion.setVisible(false);
+        btnmascotas.setVisible(true);
+     }
+private void Bloquear1(){
+        txtidprop.setEnabled(false);
+        txtPrimerApellido.setEnabled(false);
+        txtSegundoApellido.setEnabled(false);
+        txtNombre.setEnabled(false);
+        rdbMasculino.setEnabled(false);
+        rdbFemenino.setEnabled(false);
+        ftxtCelular.setEnabled(false);
+}
     private void Desbloquear() {
        txtPrimerApellido.setEnabled(true);
        txtSegundoApellido.setEnabled(true);
        txtNombre.setEnabled(true);
        rdbMasculino.setEnabled(true);
        rdbFemenino.setEnabled(true);
-       ftxtCelular.setEnabled(true);}
+       ftxtCelular.setEnabled(true);
+       btnnuevo.setVisible(true);
+        btnguardar.setVisible(true);
+        btncancelar.setVisible(true);
+        btnbuscar.setVisible(true);
+        btnmodificar.setVisible(true);
+        btnekiminar.setVisible(true);
+        btnguardarModificacion.setVisible(true);
+        btnmascotas.setVisible(true);
+    }
 
     private void Limpiar() {
        txtPrimerApellido.setText("");
@@ -83,6 +109,7 @@ public class frmpropietario extends javax.swing.JFrame {
         btnekiminar = new javax.swing.JButton();
         btnmodificar = new javax.swing.JButton();
         btnguardarModificacion = new javax.swing.JButton();
+        btnmascotas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -203,7 +230,16 @@ public class frmpropietario extends javax.swing.JFrame {
                 btnguardarModificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarModificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
+        getContentPane().add(btnguardarModificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
+
+        btnmascotas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnmascotas.setText("REGISTRAR MASCOTAS");
+        btnmascotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmascotasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnmascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -249,7 +285,7 @@ public class frmpropietario extends javax.swing.JFrame {
 
     private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
         Limpiar();
-        Bloquear();
+        Bloquear1();
         this.txtidprop.setText("");
         newRecord = false;
         prueba = false;
@@ -381,6 +417,11 @@ if (prueba == true) {
         }
     }//GEN-LAST:event_btnguardarModificacionActionPerformed
 
+    private void btnmascotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmascotasActionPerformed
+       IngresoMascotas ab=new IngresoMascotas();
+       ab.setVisible(true);
+    }//GEN-LAST:event_btnmascotasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -423,6 +464,7 @@ if (prueba == true) {
     private javax.swing.ButtonGroup btngSexo;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnguardarModificacion;
+    private javax.swing.JButton btnmascotas;
     private javax.swing.JButton btnmodificar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JFormattedTextField ftxtCelular;
