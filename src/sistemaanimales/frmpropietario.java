@@ -112,6 +112,9 @@ private void Bloquear1(){
         btnmascotas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 630));
+        setMinimumSize(new java.awt.Dimension(1000, 630));
+        setPreferredSize(new java.awt.Dimension(1000, 630));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Código de cliente:");
@@ -418,7 +421,7 @@ if (prueba == true) {
     }//GEN-LAST:event_btnguardarModificacionActionPerformed
 
     private void btnmascotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmascotasActionPerformed
-       IngresoMascotas ab=new IngresoMascotas();
+       IngresoMascotas ab = new IngresoMascotas();
        ab.setVisible(true);
     }//GEN-LAST:event_btnmascotasActionPerformed
 

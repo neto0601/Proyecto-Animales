@@ -25,12 +25,16 @@ public class Login extends javax.swing.JFrame {
         ImagenFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1000, 630));
         setMinimumSize(new java.awt.Dimension(1000, 630));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jtfUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jtfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 260, 40));
         getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 260, 40));
 
+        btnIniciar.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         btnIniciar.setText("Iniciar");
         btnIniciar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnIniciar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -41,6 +45,7 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 230, 50));
 
+        btnSalir.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSalir.setMaximumSize(new java.awt.Dimension(61, 23));
