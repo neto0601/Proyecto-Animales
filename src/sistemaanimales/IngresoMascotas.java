@@ -61,8 +61,6 @@ public class IngresoMascotas extends javax.swing.JFrame {
         jtfRaza = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        rbtnMacho = new javax.swing.JRadioButton();
-        rbtnHembra = new javax.swing.JRadioButton();
         btnRegistrar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
@@ -72,6 +70,10 @@ public class IngresoMascotas extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        rbtnMacho = new javax.swing.JRadioButton();
+        jPanel8 = new javax.swing.JPanel();
+        rbtnHembra = new javax.swing.JRadioButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -195,30 +197,6 @@ public class IngresoMascotas extends javax.swing.JFrame {
         getContentPane().add(jPanel5);
         jPanel5.setBounds(270, 380, 440, 50);
 
-        rbtnMacho.setBackground(new java.awt.Color(0, 0, 0));
-        rbtnMacho.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        rbtnMacho.setForeground(new java.awt.Color(255, 255, 255));
-        rbtnMacho.setText("Macho");
-        rbtnMacho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtnMachoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(rbtnMacho);
-        rbtnMacho.setBounds(280, 460, 130, 35);
-
-        rbtnHembra.setBackground(new java.awt.Color(0, 0, 0));
-        rbtnHembra.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        rbtnHembra.setForeground(new java.awt.Color(255, 255, 255));
-        rbtnHembra.setText("Hembra");
-        rbtnHembra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtnHembraActionPerformed(evt);
-            }
-        });
-        getContentPane().add(rbtnHembra);
-        rbtnHembra.setBounds(570, 460, 130, 35);
-
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,6 +280,70 @@ public class IngresoMascotas extends javax.swing.JFrame {
         getContentPane().add(btnLimpiar);
         btnLimpiar.setBounds(760, 530, 130, 40);
 
+        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
+
+        rbtnMacho.setBackground(new java.awt.Color(0, 0, 0));
+        rbtnMacho.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        rbtnMacho.setForeground(new java.awt.Color(255, 255, 255));
+        rbtnMacho.setText("Macho");
+        rbtnMacho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnMachoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(rbtnMacho, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rbtnMacho)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel7);
+        jPanel7.setBounds(270, 450, 140, 50);
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+
+        rbtnHembra.setBackground(new java.awt.Color(0, 0, 0));
+        rbtnHembra.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        rbtnHembra.setForeground(new java.awt.Color(255, 255, 255));
+        rbtnHembra.setText("Hembra");
+        rbtnHembra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnHembraMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(rbtnHembra, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rbtnHembra)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel8);
+        jPanel8.setBounds(570, 450, 140, 50);
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/la-vida-secreta-de-tus-mascotas-pelicula-fondos-de-pantalla-hd.jpg"))); // NOI18N
         getContentPane().add(Fondo);
         Fondo.setBounds(0, 0, 940, 740);
@@ -335,22 +377,6 @@ public class IngresoMascotas extends javax.swing.JFrame {
     
                 }
     }//GEN-LAST:event_btnRegistrarActionPerformed
-
-    private void rbtnMachoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMachoActionPerformed
-        if(rbtnMacho.isSelected()){
-            rbtnHembra.setEnabled(false);
-        }else {
-            rbtnHembra.setEnabled(true);
-        }
-    }//GEN-LAST:event_rbtnMachoActionPerformed
-
-    private void rbtnHembraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnHembraActionPerformed
-        if(rbtnHembra.isSelected()){
-            rbtnMacho.setEnabled(false);
-        }else{
-            rbtnMacho.setEnabled(true);
-        }
-    }//GEN-LAST:event_rbtnHembraActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
       if(!jtfId.getText().isEmpty()){
@@ -423,6 +449,23 @@ public class IngresoMascotas extends javax.swing.JFrame {
             
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void rbtnMachoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnMachoMouseClicked
+        if(rbtnMacho.isSelected()){
+            rbtnHembra.setEnabled(false);          
+        } else{
+            rbtnHembra.setEnabled(true);
+        }
+        
+    }//GEN-LAST:event_rbtnMachoMouseClicked
+
+    private void rbtnHembraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnHembraMouseClicked
+        if(rbtnHembra.isSelected()){
+            rbtnMacho.setEnabled(false);          
+        } else{
+            rbtnMacho.setEnabled(true);
+        }
+    }//GEN-LAST:event_rbtnHembraMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -478,6 +521,8 @@ public class IngresoMascotas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField jtfEspecie;
     private javax.swing.JTextField jtfId;
     private javax.swing.JTextField jtfNombre;
