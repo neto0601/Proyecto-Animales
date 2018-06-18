@@ -357,7 +357,7 @@ private void Bloquear1(){
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "AVISO DEL SISTEMA", 0);
         }
         registro = false;
-        Bloquear();
+        Bloquear1();
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void btnekiminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnekiminarActionPerformed
@@ -366,7 +366,7 @@ private void Bloquear1(){
             if (JOptionPane.showConfirmDialog(rootPane, "¿Desea eliminar el registro buscado?") == 0) {
                 cl.eliminar(codigo);
                 JOptionPane.showMessageDialog(rootPane, "Registro eliminado exitosamente!!", "AVISO DEL SISTEMA", 1);
-                Bloquear();
+                Bloquear1();
                 Limpiar();
                 this.txtidprop.setText("");
                 this.btnnuevo.setVisible(true);
@@ -411,7 +411,7 @@ if (prueba == true) {
                         JOptionPane.showMessageDialog(rootPane, "El registro ha sido correctamente actualizado!!", "AVISO DEL SISTEMA", 1);
                         txtidprop.setText("");
                         Limpiar();
-                        Bloquear();
+                        Bloquear1();
                         prueba = false;
                         newRecord = false;
 
