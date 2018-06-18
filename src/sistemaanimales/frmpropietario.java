@@ -111,6 +111,7 @@ private void Bloquear1(){
         btnmodificar = new javax.swing.JButton();
         btnguardarModificacion = new javax.swing.JButton();
         btnmascotas = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1000, 630));
@@ -118,32 +119,42 @@ private void Bloquear1(){
         setPreferredSize(new java.awt.Dimension(1000, 630));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         jLabel1.setText("Código de cliente:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 30));
 
         txtidprop.setEnabled(false);
-        getContentPane().add(txtidprop, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 50, 20));
+        getContentPane().add(txtidprop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 210, 20));
 
+        jLabel2.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         jLabel2.setText("Primer apellido:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         txtPrimerApellido.setEnabled(false);
-        getContentPane().add(txtPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 240, 20));
+        getContentPane().add(txtPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 210, 20));
 
+        jLabel3.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         jLabel3.setText("Segundo apellido:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         txtSegundoApellido.setEnabled(false);
-        getContentPane().add(txtSegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 240, 20));
+        txtSegundoApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSegundoApellidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtSegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 210, 20));
 
+        jLabel4.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         jLabel4.setText("Nombre(s):");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtNombre.setEnabled(false);
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 320, 20));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, 20));
 
+        jLabel7.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         jLabel7.setText("Celular:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 60, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 80, -1));
 
         try {
             ftxtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
@@ -154,6 +165,7 @@ private void Bloquear1(){
         ftxtCelular.setEnabled(false);
         getContentPane().add(ftxtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 110, -1));
 
+        jLabel8.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
         jLabel8.setText("Sexo:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
@@ -175,7 +187,7 @@ private void Bloquear1(){
                 btnnuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 90, -1));
+        getContentPane().add(btnnuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 120, 30));
 
         btncancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btncancelar.setText("C A N C E L A R");
@@ -185,7 +197,7 @@ private void Bloquear1(){
                 btncancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
+        getContentPane().add(btncancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 120, 30));
 
         btnguardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnguardar.setText("G U A R D A R ");
@@ -194,7 +206,7 @@ private void Bloquear1(){
                 btnguardarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 120, -1));
+        getContentPane().add(btnguardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 120, 30));
 
         btnbuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnbuscar.setText("B U S C A R");
@@ -204,7 +216,7 @@ private void Bloquear1(){
                 btnbuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        getContentPane().add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 120, 30));
 
         btnekiminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnekiminar.setText("E L I M I N A R");
@@ -214,7 +226,7 @@ private void Bloquear1(){
                 btnekiminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnekiminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, -1));
+        getContentPane().add(btnekiminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 120, 30));
 
         btnmodificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnmodificar.setText("M O D I F I C A R");
@@ -224,7 +236,7 @@ private void Bloquear1(){
                 btnmodificarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
+        getContentPane().add(btnmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 120, 30));
 
         btnguardarModificacion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnguardarModificacion.setText("GUARDAR MODIFICACIÓN");
@@ -234,7 +246,7 @@ private void Bloquear1(){
                 btnguardarModificacionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnguardarModificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, -1));
+        getContentPane().add(btnguardarModificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 260, 40));
 
         btnmascotas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnmascotas.setText("REGISTRAR MASCOTAS");
@@ -243,7 +255,10 @@ private void Bloquear1(){
                 btnmascotasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnmascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, -1, -1));
+        getContentPane().add(btnmascotas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 260, 40));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/propietarios0fndo.jpg"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1000, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -427,6 +442,10 @@ if (prueba == true) {
        dispose();
     }//GEN-LAST:event_btnmascotasActionPerformed
 
+    private void txtSegundoApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSegundoApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSegundoApellidoActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -477,6 +496,7 @@ if (prueba == true) {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JRadioButton rdbFemenino;
     private javax.swing.JRadioButton rdbMasculino;
     private javax.swing.JTextField txtNombre;
