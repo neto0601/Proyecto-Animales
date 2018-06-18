@@ -27,6 +27,7 @@ public class frmpropietario extends javax.swing.JFrame {
     
     public frmpropietario() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
      private void Bloquear(){
@@ -423,6 +424,7 @@ if (prueba == true) {
     private void btnmascotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmascotasActionPerformed
        IngresoMascotas ab = new IngresoMascotas();
        ab.setVisible(true);
+       dispose();
     }//GEN-LAST:event_btnmascotasActionPerformed
 
     

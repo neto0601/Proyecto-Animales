@@ -81,7 +81,7 @@ public class Login extends javax.swing.JFrame {
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         frmpropietario a = new frmpropietario();
         a.setVisible(true);
-        
+        dispose();
 // TODO add your handling code here:
     }//GEN-LAST:event_btnIniciarActionPerformed
 
