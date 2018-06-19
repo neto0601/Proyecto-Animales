@@ -1,6 +1,11 @@
 
 package sistemaanimales;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
+
+
 
 public class Login extends javax.swing.JFrame {
 
@@ -8,7 +13,8 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
-    }
+     } 
+    MetodoLogin met = new MetodoLogin();
 
     
     @SuppressWarnings("unchecked")
@@ -32,6 +38,12 @@ public class Login extends javax.swing.JFrame {
 
         jtfUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jtfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 260, 40));
+
+        jPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordKeyPressed(evt);
+            }
+        });
         getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 260, 40));
 
         btnIniciar.setFont(new java.awt.Font("Aparajita", 3, 24)); // NOI18N
@@ -51,6 +63,11 @@ public class Login extends javax.swing.JFrame {
         btnSalir.setMaximumSize(new java.awt.Dimension(61, 23));
         btnSalir.setMinimumSize(new java.awt.Dimension(61, 23));
         btnSalir.setPreferredSize(new java.awt.Dimension(61, 23));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 250, 50));
 
         Título.setBackground(new java.awt.Color(0, 0, 0));
@@ -79,11 +96,34 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        frmpropietario a = new frmpropietario();
-        a.setVisible(true);
-        dispose();
+        if(met.validar()==1){
+            this.dispose();
+            
+            JOptionPane.showMessageDialog(null,"Bienvenido:\n Has ingresado satisfactoriamente al sistema","Mensaje de Bienvenida", JOptionPane.INFORMATION_MESSAGE);
+            frmpropietario show = new frmpropietario();
+            show.setVisible(true);
+            
+        }else{
+          JOptionPane.showMessageDialog(null,"Acceso Negado\n Por favor ingrese usuario y contraseña correctos","Acceso denegado", JOptionPane.ERROR_MESSAGE);
+            
+        }
+        
 // TODO add your handling code here:
     }//GEN-LAST:event_btnIniciarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void jPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyPressed
+    if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        btnIniciarActionPerformed(null);
+    }
+
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordKeyPressed
 
     
     public static void main(String args[]) {
@@ -123,9 +163,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Título;
     private javax.swing.JButton btnIniciar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JPasswordField jPassword;
+    public static javax.swing.JPasswordField jPassword;
     private javax.swing.JLabel jlblContraseña;
     private javax.swing.JLabel jlblUsuario;
-    private javax.swing.JTextField jtfUsuario;
+    public static javax.swing.JTextField jtfUsuario;
     // End of variables declaration//GEN-END:variables
+
 }
